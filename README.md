@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+## Goal
+- learn how to use `graphql` , `react query` , `redux-toolkit`  and `next js`  combo in sync
 
-First, run the development server:
+### Questions in mind
+- how do I setup a graphql connection that fetches and posts data without wierd cacheing and manage the data in redux?
+- how can I use react-query to make the fetching data , handleing fetch error , and creating state painless?
+- how can I make a template out of it that can make all this work 100x easier?
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Functional requirements
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### User stories
+1. User should be able to enter text to make todos
+	- [x] put a text box in the page
+	- [x] when the text box is clicked append an list item and clear out he box content
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+2. User should be able to check off a todo
+   - [x] On clicking on the checkbox put a stike through on that todo
 
-## Learn More
+3. User should see a good and accessable ui
+   - [x] style the input
+   - [x] make the todo items look nicer and specious
+   - [x] make the input same size as list
+   - [x] make it mobile responsive
 
-To learn more about Next.js, take a look at the following resources:
+4. User should be able to edit those todos
+   - [x] show an edit button beside every todo 
+   - [x] on click make that todo gray , and put it into the input box
+   - [x] change the input button icon to an edit icon like pencil
+   - [x] on click update that todo 
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+5. user should be able to delete his todos
+   - [x] show another button beside every todo with a trash icon or emoji
+   - [x] on click remove the todo
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- setup database and server with graphql
+  - [ ] setup prisma in next js and seed the db
+  - [ ] setup graphql server in next js
+  - [ ] create the CRUD handler in graphql
 
-## Deploy on Vercel
+- setup frontend to conusme the api using graphql-req and react query
+  - [ ] setup graphql request in next js
+  - [ ] setup react query to consume gql req api
+  - [ ] fet data from the gql server
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- integrate redux toolkit to manage the state
+  - [ ] setup redux toolkit 
+  - [ ] delegate the state changes to redux
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Notes
+
+- 
