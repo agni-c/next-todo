@@ -1,46 +1,5 @@
-'use client';
-import Image from 'next/image';
-import { todosData, TodoType } from './data';
-import { FormEvent, useEffect, useRef, useState } from 'react';
-
-export default function Home() {
-	const [todos, setTodos] = useState(todosData);
-	const [todoInput, setTodoInput] = useState('');
-
-	const addTodo = (e: FormEvent<HTMLFormElement>) => {
-		e.preventDefault();
-		if (todoInput.length < 1) return;
-		setTodos([
-			...todos,
-			{ id: todos.length + 1, title: todoInput, completed: false }
-		]);
-		setTodoInput('');
-	};
-
-	return (
-		<div className='container'>
-			<form className='todo-creator' onSubmit={e => addTodo(e)}>
-				<input
-					className='todo-input'
-					type='text'
-					placeholder='Enter todo'
-					required={true}
-					onChange={e => setTodoInput(e.target.value)}
-					value={todoInput}
-				/>
-				<button className='add-todo' type='submit'>
-					Add
-				</button>
-			</form>
-
-			<div className='todo-list'>
-				{todos.map(todo => (
-					<TodoItem key={todo.id} todo={todo} setTodos={setTodos} />
-				))}
-			</div>
-		</div>
-	);
-}
+import { TodoType } from '@/app/data';
+import { useEffect, useRef, useState } from 'react';
 
 type TodoItemProps = {
 	todo: TodoType;
@@ -85,7 +44,9 @@ const TodoItem = ({ todo, setTodos }: TodoItemProps) => {
 			className={`todo-item ${
 				isEditMode ? 'bg-orange-400' : 'bg-orange-400'
 			} `}>
-			<label htmlFor='todoEditInput'></label>
+			<label htmlFor='todoEditInput' className='hidden'>
+				todo check
+			</label>
 			<input
 				ref={editInputRef}
 				id='todoEditInput'
@@ -104,7 +65,7 @@ const TodoItem = ({ todo, setTodos }: TodoItemProps) => {
 			key={todo.id}
 			className={`todo-item ${
 				isEditMode ? 'bg-gray-100' : 'bg-orange-400'
-			} `}>
+			}  `}>
 			<label htmlFor='todoCheckInput'></label>
 			<input
 				id='todoCheckInput'
@@ -134,3 +95,5 @@ const TodoItem = ({ todo, setTodos }: TodoItemProps) => {
 		</div>
 	);
 };
+
+export default TodoItem;

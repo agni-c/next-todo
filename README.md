@@ -35,20 +35,28 @@
    - [x] on click remove the todo
 
 - setup database and server with graphql
-  - [ ] setup prisma in next js and seed the db
-  - [ ] setup graphql server in next js
-  - [ ] create the CRUD handler in graphql
+  - [x] setup prisma in next js and seed the db
+  - [x] setup graphql server in next js
+  - [x] integrate prisma and graphql server
+  - [x] create the CRUD handler in graphql
 
-- setup frontend to conusme the api using graphql-req and react query
-  - [ ] setup graphql request in next js
-  - [ ] setup react query to consume gql req api
-  - [ ] fet data from the gql server
+- setup todo functionalities using apollo client
+- - [ ] show todos
+  - [ ] create todos
+  - [ ] update todos
+  - [ ] delete todos
 
-- integrate redux toolkit to manage the state
-  - [ ] setup redux toolkit 
-  - [ ] delegate the state changes to redux
+- integrate next auth
+  - [ ] setup github auth
+  - [ ] setup google auth
+  - [ ] make the auth system
+  - [ ] make a guest login
 
 
 ## Notes
 
-- 
+- integrate prisma and graphql server 
+  - https://youtu.be/jXqkJARfWiQ?t=640
+    - I might not understanding how It operates in app router
+    - most of them use pages/api/graphql
+    - I do not know how to Use Get and post apis handlers
